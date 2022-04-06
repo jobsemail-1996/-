@@ -1,0 +1,38 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        char letter; // q and Q
+        int number; // вводимое число
+        int abc; //номер системы в которой число
+
+        do {
+            System.out.println("Введите число: ");
+            number = sc.nextInt();
+            System.out.println("В какой системе счисления число?");
+            abc = sc.nextInt();
+
+
+            switch (abc) {
+                case 2:
+                    String convert = Long.toBinaryString(number);
+                    System.out.println("Двоичная система: " + convert);
+                    break;
+                case 8:
+                    convert = Long.toOctalString(number);
+                    System.out.println("Воьмиричная система: " + convert);
+                    break;
+                case 16:
+                    convert = Long.toHexString(number).toUpperCase();
+                    System.out.println("Шестнадцатеричная система: " + convert);
+            }
+            letter = sc.next().charAt(0);
+
+        } while (letter != 'q' && letter != 'Q');
+
+    }
+}
